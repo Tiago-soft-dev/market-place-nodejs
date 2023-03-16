@@ -1,11 +1,17 @@
 const express = require('express');
 const connectToDatabse = require("./src/database/database");
+const usuario = require('./src/routes/usuario.router');
 
 const app = express();
 const port = 3000;
 app.use(express.json());
 
+
+
+
 connectToDatabse();
+
+app.use("/usuario", usuario);
 
 
 app.get('/', (req, res) =>{
