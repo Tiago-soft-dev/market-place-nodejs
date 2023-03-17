@@ -6,7 +6,7 @@ const usuarioController=require('../controller/usuario.controller');
 
 //rotas get
 router.get('/findById/:id', usuarioController.findUserByIdController);
-router.get('findAll', usuarioController.findAllUsersController);
+router.get('/findAll', usuarioController.findAllUsersController);
 
 //rotas post
 router.post('/create', usuarioController.createUserController);
@@ -17,8 +17,8 @@ router.post('/addFavProduct/:id', usuarioController.addUserFavProductController)
 router.put('update/:id', usuarioController.updateUserController);
 
 //rotas delete
-router.delete('/remove/:id', usuarioController.deleteUserController);
-router.detlete('/removeAdress', usuarioController.removeUserAdressController);
+router.delete('/remove/:id', usuarioController.removeUserController);
+router.delete('/removeAdress', usuarioController.removeUserAdressController);
 router.delete('/removeFavProduct', usuarioController.removeUserFavProductController);
 
 
