@@ -1,6 +1,6 @@
 const express = require('express');
-const connectToDatabse = require("./src/database/database");
-const usuario = require('./src/routes/usuario.router');
+const connectToDatabse = require("./src/database/database"); //conexao com o banco
+const usuario = require('./src/routes/usuario.router'); // rota do usuario
 
 const app = express();
 const port = 3000;
@@ -9,9 +9,9 @@ app.use(express.json());
 
 
 
-connectToDatabse();
+connectToDatabse(); //conecta ao banco
 
-app.use("/usuario", usuario);
+app.use("/usuario", usuario); //chama as rotas do usuario
 
 
 app.get('/', (req, res) =>{
