@@ -21,7 +21,7 @@ module.exports = async (req,res,next) => {
         return res.status(401).send({message: "o token invalido"});
     }
 
-    jwt.verify(token, "bgfjnmgdbfhdfhmhjnfgbhgjmfjkm", async (err, decoded)=> {
+    jwt.verify(token, process.env.SECRET, async (err, decoded)=> {
         if(err){
             return res.status(500).send({message: "o token invalido"});
         }
