@@ -25,7 +25,7 @@ const createProductController = async (req, res) =>{
         const corpo = {
             ...req.body,
             userId: req.userId,
-            createdAt: new Date();
+            createdAt: new Date()
         }
         res.send(await produtoService.createProductService(corpo));
 
