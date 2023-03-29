@@ -4,6 +4,8 @@ const connectToDatabse = require("./src/database/database"); //conexao com o ban
 const usuario = require('./src/routes/usuario.router'); // rota do usuario
 const auth = require('./src/routes/auth.router');
 const produto = require("./src/routes/produto.router") //arquivo de rota de produto
+const categoria = require("./src/routes/categoria.router") //arquivo de rota de categoria
+
 
 const app = express();
 const port = 3000;
@@ -17,6 +19,8 @@ connectToDatabse(); //conecta ao banco
 app.use("/usuario", usuario); //chama as rotas do usuario
 app.use("/auth", auth);
 app.use("/produto", produto);
+app.use("/categoria", categoria); //chama as rotas de categoria
+
 
 
 app.get('/', (req, res) =>{
