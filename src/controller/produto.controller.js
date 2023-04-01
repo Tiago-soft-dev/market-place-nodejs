@@ -53,12 +53,39 @@ const deleteProductController = async (req, res) =>{
             console.log(`erro: ${err.message}`)
     return res.status(500).send({message:"Erro inexperado"});
 }
+};
+
+const addCategoriaProdutocontroller = async (req, res) => {
+    try{
+       req.body.createAt = new Date();
+       const categoria = await produtoService.addCategoriaProdutoservice(req.params.id, req.body);
+
+
+}catch(err){
+            console.log(`erro: ${err.message}`)
+    return res.status(500).send({message:"Erro inexperado"});
 }
+};
+
+const removeCategoriaProdutocontroller = async (req, res) => {
+    try{
+       
+       const categoria = await produtoService.removeCategoriaProdutoservice(req.body);
+
+
+}catch(err){
+            console.log(`erro: ${err.message}`)
+    return res.status(500).send({message:"Erro inexperado"});
+}
+}
+
 
 module.exports = {
     findProductByIdController,
     findAllProductsController,
     updateProductController,
     createProductController,
-    deleteProductController
+    deleteProductController,
+    addCategoriaProdutocontroller,
+    removeCategoriaProdutocontroller
 }
