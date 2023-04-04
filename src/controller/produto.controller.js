@@ -55,11 +55,11 @@ const deleteProductController = async (req, res) =>{
 }
 };
 
-const addCategoriaProdutocontroller = async (req, res) => {
+const addCategoriaProdutoController = async (req, res) => {
     try{
        req.body.createAt = new Date();
-       const categoria = await produtoService.addCategoriaProdutoservice(req.params.id, req.body);
-
+       const categoria = await produtoService.addCategoriaProdutoService(req.params.id, req.body);
+        res.status(200).send(categoria);
 
 }catch(err){
             console.log(`erro: ${err.message}`)
@@ -67,11 +67,10 @@ const addCategoriaProdutocontroller = async (req, res) => {
 }
 };
 
-const removeCategoriaProdutocontroller = async (req, res) => {
+const removeCategoriaProdutoController = async (req, res) => {
     try{
-       
-       const categoria = await produtoService.removeCategoriaProdutoservice(req.body);
-
+       const categoria = await produtoService.removeCategoriaProdutoService(req.params.id, req.body);
+       res.status(200).send(categoria);
 
 }catch(err){
             console.log(`erro: ${err.message}`)
@@ -86,6 +85,6 @@ module.exports = {
     updateProductController,
     createProductController,
     deleteProductController,
-    addCategoriaProdutocontroller,
-    removeCategoriaProdutocontroller
+    addCategoriaProdutoController,
+    removeCategoriaProdutoController
 }
